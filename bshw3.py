@@ -20,9 +20,9 @@ soup = BeautifulSoup(r.text, 'html.parser')
 soup = soup.prettify()
 
 
-soup = soup.replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg','///Users/courtneyluk/Desktop/Portfolio/me.png')
+soup = soup.replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg','media/me.png')
 soup = soup.replace('student','AMAZING student')
-#soup = soup.replace()
+soup = soup.replace('logo2.png','media/logo.png')
 
 #print(soup)
 
@@ -43,13 +43,6 @@ html.close()
 	#if text_chunk.h3:
 	#	print(text_chunk.h3)
 
-#html.write
-
-#with open('BSI admissions _ University of Michigan School of Information.htm') as inf:
-#	txt = inf.read()
-#	soup = bs4.BeautifulSoup(txt)
-
-#new_link = soup.new_tag
 
 
 
