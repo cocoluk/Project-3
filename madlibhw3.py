@@ -14,7 +14,7 @@ print("START*******")
 import nltk 
 import random
 
-nltk.download('punkt')
+#nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
 from nltk.book import text2
@@ -22,31 +22,27 @@ from nltk.book import text2
 debug = False #True
 
 stuff = []
-for x in text2:
+for x in text2[:151]:
 	stuff.append(x)
 
 print (stuff)
 
 # get file from user to make mad lib out of
-if debug:
-	print ("Getting information from file madlib_test.txt...\n")
-fname = "text2" # need a file with this name in directory
+#if debug:
+#	print ("Getting information from file madlib_test.txt...\n")
+#tfname = "text2" # need a file with this name in directory
 
-#f = open(fname, 'r')
-#para = f.read()
-tokens = nltk.word_tokenize(stuff)
-print("TOKENS")
-print(tokens)
-tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
+
+tagged_tokens = nltk.pos_tag(stuff) # gives us a tagged list of tuples
+#print("TAGGED TOKENS")
+#print(tagged_tokens)
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:151]:
 		print (tup)
 
-tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective"}
-substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1}
+tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective","NNP":"a proper noun"}
+substitution_probabilities = {"NN":.15,"NNS":.1,"VB":.1,"JJ":.1,"NNP":.1}
 
 def spaced(word):
 	if word in [",", ".", "?", "!", ":"]:
@@ -64,8 +60,8 @@ for (word, tag) in tagged_tokens:
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
 
-for words in final_words:
-	print (words)
+
+print ("".join(final_words))
 
 
 print("\n\nEND*******")
