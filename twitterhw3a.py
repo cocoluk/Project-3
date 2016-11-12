@@ -32,7 +32,6 @@ api.update_with_media(photo_path, status=hashtags)
 #tweet = input('Enter image file name')
 #status = api.update_status(status=tweet)
 
-#filename = open(input('Enter image file name:'),'r')
 
 
 
